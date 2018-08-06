@@ -1,0 +1,69 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}"/>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+
+<script th:src="@{/jquery/jquery-3.2.1.min.js}"></script> 
+<script th:src="@{/dataTables/js/jquery.dataTables.min.js}"></script>
+<script th:src="@{/dataTables/js/dataTables.bootstrap4.min.js}"></script>
+<script th:src="@{/dataTables/js/dataTables.responsive.min.js}"></script>
+<script th:src="@{/dataTables/js/responsive.bootstrap4.min.js}"></script>
+<script th:src="@{/js/student.js}"></script>
+<title></title>
+</head>
+<body>
+<br/>
+<br/>
+	<div class="container">
+		<div class="card">
+			<div class="card-header">Input Student</div>
+			<div class="card-body">
+				<form name="insert" id="insert" method="post" onsubmit="validateSaveStudent()">
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" class="form-control" name="name" id="name" required="required" />
+					</div>
+					<div class="form-group">
+						<label for="placeOfBirth">Place of Birth</label>
+						<input type="text" class="form-control" name="placeOfBirth" id="placeOfBirth" required="required" />
+					</div>
+					<div class="form-group">
+						<label for="dateOfBirth">Date of Birth</label>
+						<input type="text" class="form-control" name="dateOfBirth" id="dateOfBirth" required="required" />
+					</div>
+					<div class="form-group">
+						<label for="gender">Gender</label>
+						<select class="form-control" id="gender">
+							<option value="M">Male</option>
+							<option value="F">Female</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="level">Level</label>
+						<select class="form-control" id="level">
+							<option value="SD">Elementary School</option>
+							<option value="SMP">Junior High School</option>
+							<option value="SMA">Senior High School</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="schoolName">School Name</label>
+						<input type="text" class="form-control" name="schoolName" id="schoolName" required="required" />
+					</div>
+					<div class="form-group">
+						<label for="classroom">Classroom</label>
+						<input type="text" class="form-control" name="classroom" id="classroom" required="required" />
+					</div>
+					<div>
+						<button type="submit" id="btn-save" class="btn btn-primary">Save Student</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
