@@ -18,15 +18,15 @@ import com.pantau.util.ResponseUtil;
 @Controller
 @RequestMapping("/rest/school-grades")
 public class SchoolGradesRest {
-	
+
 	@Autowired
 	private SchoolGradesDao schoolGradesDao;
-	
+
 	@RequestMapping(value = "/insert", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON)
 	public @ResponseBody DtoResponse insertStudent(@RequestBody SchoolGradesDto data) {
 
 		SchoolGrades schoolGrades = new SchoolGrades();
-		
+
 		schoolGrades.setSchoolName(data.getSchoolName());
 		schoolGrades.setSchoolAddress(data.getSchoolAddress());
 		schoolGrades.setClassroom(data.getClassroom());
@@ -42,4 +42,40 @@ public class SchoolGradesRest {
 		return ResponseUtil.response(1, "Success");
 	}
 
+	@RequestMapping(value = "/update", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON)
+	public @ResponseBody DtoResponse updateSchoolGrades(@RequestBody SchoolGradesDto data) {
+
+		SchoolGrades schoolGrades = schoolGradesDao.findOne(data.getGradesId());
+
+		if (schoolGrades != null) {
+			schoolGrades.setGradesId(data.getGradesId());
+			schoolGrades.setSchoolName(data.getSchoolName());
+			schoolGrades.setSchoolAddress(data.getSchoolAddress());
+			schoolGrades.setClassroom(data.getClassroom());
+			schoolGrades.setSemester(data.getSemester());
+			schoolGrades.setAcademicYear(data.getAcademicYear());
+			schoolGrades.setHomeroomTeacher(data.getHomeroomTeacher());
+			schoolGrades.setRank(data.getRank());
+			schoolGrades.setId(data.getId());
+			schoolGrades.setLessonValue(data.getLessonValue());
+
+			schoolGradesDao.save(schoolGrades);
+		} else {
+			return ResponseUtil.response(0, "Update to Failed");
+		}
+		return ResponseUtil.response(1, "Success");
+	}
+
+	@RequestMapping(value = "/delete", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON)
+	public @ResponseBody DtoResponse deleteSchoolGrades(@RequestBody SchoolGradesDto data) {
+
+		SchoolGrades schoolGrades = schoolGradesDao.findOne(data.getGradesId());
+
+		if (schoolGrades != null) {
+			schoolGradesDao.delete(schoolGrades);
+		} else {
+			return ResponseUtil.response(0, "Delete to Failed");
+		}
+		return ResponseUtil.response(1, "Success");
+	}
 }

@@ -6,14 +6,16 @@
 <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}"/>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" />
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+<link rel="stylesheet" th:href="@{/gijgo/css/gijgo.min.css}"/>
 
 <script th:src="@{/jquery/jquery-3.2.1.min.js}"></script> 
 <script th:src="@{/dataTables/js/jquery.dataTables.min.js}"></script>
 <script th:src="@{/dataTables/js/dataTables.bootstrap4.min.js}"></script>
 <script th:src="@{/dataTables/js/dataTables.responsive.min.js}"></script>
 <script th:src="@{/dataTables/js/responsive.bootstrap4.min.js}"></script>
-<script th:src="@{/js/student.js}"></script>
-<title></title>
+<script th:src="@{/gijgo/js/gijgo.min.js}"></script>
+<script th:src="@{/js/add/student.js}"></script>
+<title>Add Student</title>
 </head>
 <body>
 <br/>
@@ -33,7 +35,7 @@
 					</div>
 					<div class="form-group">
 						<label for="dateOfBirth">Date of Birth</label>
-						<input type="text" class="form-control" name="dateOfBirth" id="dateOfBirth" required="required" />
+						<input type="text" class="form-control" name="dateOfBirth" id="dateOfBirth" required="required" disabled="disabled" />
 					</div>
 					<div class="form-group">
 						<label for="gender">Gender</label>

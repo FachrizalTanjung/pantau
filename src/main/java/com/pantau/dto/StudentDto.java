@@ -9,6 +9,9 @@ import com.pantau.util.CustomDateJsonSerializer;
 
 public class StudentDto {
 
+	// Untuk button update
+	private Integer id;
+	
 	private String name;
 	private String placeOfBirth;
 	@JsonSerialize(using = CustomDateJsonSerializer.class)
@@ -18,6 +21,14 @@ public class StudentDto {
 	private String level;
 	private String schoolName;
 	private String classroom;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getName() {
 		return name;

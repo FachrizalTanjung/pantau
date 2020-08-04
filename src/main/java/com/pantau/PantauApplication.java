@@ -9,19 +9,19 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class PantauApplication extends SpringBootServletInitializer {
-	
+
 	@Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(PantauApplication.class);
-    }
-	
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(PantauApplication.class);
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(PantauApplication.class, args);
 	}
-	
+
 	@Bean
-	public RestTemplate restTemplate(){
-		
+	public RestTemplate restTemplate() {
+
 		return new RestTemplate();
 	}
 }

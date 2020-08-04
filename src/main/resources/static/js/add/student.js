@@ -1,5 +1,8 @@
 $(document).ready(function () {
-
+	$('#dateOfBirth').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: 'dd-mmm-yyyy'
+    });
 });
 
 function validateSaveStudent() {
@@ -27,7 +30,7 @@ function validateSaveStudent() {
 		var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://localhost:8082/pantau-ws/rest/student/insert",
+			"url": "http://localhost:8082/pantau/rest/student/insert",
 			"method": "POST",
 			"headers": {
 				"content-type": "application/json",

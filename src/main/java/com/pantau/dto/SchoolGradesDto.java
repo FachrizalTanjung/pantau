@@ -2,6 +2,8 @@ package com.pantau.dto;
 
 public class SchoolGradesDto {
 
+	private Integer gradesId;
+
 	private String schoolName;
 	private String schoolAddress;
 	private int classroom;
@@ -11,6 +13,15 @@ public class SchoolGradesDto {
 	private int rank;
 	private Integer id;
 	private String lessonValue;
+	
+
+	public Integer getGradesId() {
+		return gradesId;
+	}
+
+	public void setGradesId(Integer gradesId) {
+		this.gradesId = gradesId;
+	}
 
 	public String getSchoolName() {
 		return schoolName;

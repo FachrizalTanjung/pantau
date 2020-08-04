@@ -7,9 +7,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class StudentController {
 
 	@RequestMapping(value = "/student")
-	public String index() {
+	public String student() {
 
-		return "student";
+		return "index/student";
+	}
+
+	@RequestMapping(value = "/add-student")
+	public String addStudent() {
+
+		return "add/student";
+	}
+
+	@RequestMapping(value = "/update-student")
+	public String updateStudent() {
+
+		return "update/student";
 	}
 
 }
